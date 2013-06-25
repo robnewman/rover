@@ -18,7 +18,7 @@ Caveats
 =======
 
 * Dynamic behavior provided by [jQuery](http://jquery.com/)
-* Layout and styles via [Twitter Bootstrap](ihttp://twitter.github.io/bootstrap/), provided by [NetDNA CDN](http://www.bootstrapcdn.com/)
+* Layout and styles via [Twitter Bootstrap](http://twitter.github.io/bootstrap/), provided by [NetDNA CDN](http://www.bootstrapcdn.com/)
 
 Limitations
 ===========
