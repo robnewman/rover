@@ -1,13 +1,26 @@
 rover
 =====
 
-Rover Code Project
+Rover Test Code Project
 
 Assumptions
 ===========
 
-* Virtualenv installed
-* Package management with Pip
+* Package management with [Pip](https://pypi.python.org/pypi/pip)
+* [Virtualenv](https://pypi.python.org/pypi/virtualenv) installed
+** Image manipulation with [django-stdimage](https://github.com/pivotal-energy-solutions/django-stdimage)
+** Breadcrumbs by [django-breadcrumbs](https://github.com/chronossc/django-breadcrumbs)
+** [South](http://south.aeracode.org/) for database migrations
 * A DVCS (such as Git)
-* Sqlite
-* South for db migrations
+* Sqlite backend
+
+Caveats
+=======
+
+* Dynamic behavior provided by [jQuery](http://jquery.com/)
+* Layout and styles via [Twitter Bootstrap](ihttp://twitter.github.io/bootstrap/), provided by [NetDNA CDN](http://www.bootstrapcdn.com/)
+
+Limitations
+===========
+
+* Form uploads not implemented
