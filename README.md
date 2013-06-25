@@ -23,4 +23,4 @@ Caveats
 Limitations
 ===========
 
-* Form uploads not implemented
+* Form uploads implemented with CBV ModelForm but not working
