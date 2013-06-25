@@ -8,9 +8,9 @@ Assumptions
 
 * Package management with [Pip](https://pypi.python.org/pypi/pip)
 * [Virtualenv](https://pypi.python.org/pypi/virtualenv) installed
-** Image manipulation with [django-stdimage](https://github.com/pivotal-energy-solutions/django-stdimage)
-** Breadcrumbs by [django-breadcrumbs](https://github.com/chronossc/django-breadcrumbs)
-** [South](http://south.aeracode.org/) for database migrations
+* Image manipulation with [django-stdimage](https://github.com/pivotal-energy-solutions/django-stdimage)
+* Breadcrumbs by [django-breadcrumbs](https://github.com/chronossc/django-breadcrumbs)
+* [South](http://south.aeracode.org/) for database migrations
 * A DVCS (such as Git)
 * Sqlite backend
 
