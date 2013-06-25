@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+
+{% block content_body %}
+  <form action="."
+        method="POST">{{ form }}{% csrf_token %}
+    <input type="submit" value="Add dog" />
+  </form>
+{% endblock content_body %}

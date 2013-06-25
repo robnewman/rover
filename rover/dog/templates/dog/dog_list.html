@@ -1,0 +1,86 @@
+{% extends "base_generic.html" %}
+
+{% block content_body %}
+
+  {% if searchtype %}
+    <h2>Search Results</h2>
+    <p>Your search of <strong>{{ searchtype }}</strong>
+    with the term <strong>{{ searchname }}</strong>
+    returned <strong>{{ dog_list|length }}</strong> match{{ dog_list|length|pluralize:"es" }}.</p>
+  {% endif %}
+
+  <ul class="thumbnails">
+    {% for d in dog_list %}
+      <li class="span3">
+        <div class="thumbnail text-center">
+          <img src="{{ d.profile_photo.thumbnail.url }}"
+               class="img-polaroid"
+               alt="{{ d.name }}">
+          <!-- Trigger modal -->
+          <a href="#dogModal-{{ d.slug }}"
+             role="button"
+             class="btn"
+             data-toggle="modal">
+              {{ d.name }}
+          </a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- START: Hidden Modals -->
+  {% for d in dog_list %}
+    <div id="dogModal-{{ d.slug }}"
+         class="modal hide fade"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="dogModalLabel"
+         aria-hidden="true">
+      <div class="modal-header">
+        <button type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true">×</button>
+        <h3 id="myModalLabel">{{ d.name }}</h3>
+      </div>
+      <div class="modal-body text-center">
+        <img src="{{ d.profile_photo.url }}"
+             class="img-polaroid"
+             alt="Profile photo for {{ d.name }}" />
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <th>Owner</th>
+              <td>
+                {% for owner in d.owner.all %}
+                  {% if not forloop.first %}, {% endif %}
+                  {{ owner.full_name }}
+                {% endfor %}
+              </td>
+            </tr>
+            <tr>
+              <th>Breed</th>
+              <td>
+                {% for breed in d.breed.all %}
+                  {% if not forloop.first %}, {% endif %}
+                  {{ breed.breed }}
+                {% endfor %}
+              </td>
+            </tr>
+            <tr>
+              <th>Weight</th>
+              <td>{{ d.weight }} lbs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+          Close
+        </button>
+      </div>
+    </div>
+  {% endfor %}
+  <!-- END: Hidden Modals -->
+
+{% endblock content_body %}

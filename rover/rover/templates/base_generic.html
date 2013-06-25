@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rover Test: Dogs</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
+          rel="stylesheet">
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="#">Rover Test</a>
+            <ul class="nav">
+              <li class="active divider-vertical"><a href="/">Dogs</a></li>
+            </ul>
+            <form class="navbar-search pull-right form-inline"
+                  action="/search/"
+                  type="GET">
+              <select name="type">
+                <option value="owner">By owner</option>
+                <option value="dog">By dog</option>
+              </select>
+              <input name="name"
+                     type="text"
+                     class="input-medium search-query"
+                     placeholder="Enter name">
+              <button type="submit" class="btn">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div id="breadcrumb-trail">
+        {% block breadcrumbs %}
+          <ul class="breadcrumb">
+            {% for bc in request.breadcrumbs %}
+              <li>
+                <a href="{{ bc.url }}">
+                  {{ bc.name }}
+                </a>
+                {% if not forloop.last %}
+                  <span class="divider">/</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endblock breadcrumbs %}
+      </div>
+      {% block content_header %}
+      {% endblock content_header %}
+
+      {% block content_body %}
+      {% endblock content_body %}
+    </div>
+  </body>
+</html>
