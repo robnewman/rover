@@ -9,7 +9,7 @@ urlpatterns = patterns('',
             queryset=Dog.objects.prefetch_related('owner'),
             context_object_name="dog_list",
             template_name="dog/dog_list.html"
-        ), name='dog-list'
+        ), name='dog-search'
     ),
     url(r'^add/$',
         DogCreate.as_view(
